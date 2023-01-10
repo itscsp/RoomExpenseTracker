@@ -1,8 +1,20 @@
 import React from "react";
+import Header from './components/Header';
+import Users from './components/Users'
+import Form from './components/Form'
+import ExpensesList from './components/ExpensesList'
+
 import './app.css'; //added line
 
 const App = () => {
-    return <h1 className="text-primary text-4xl font-normal">Hello world! I am using React</h1>;
+    return (
+        <div className="container m-auto">
+            <Header />
+            <Users />
+            <Form />
+            <ExpensesList />
+        </div>
+    );
 }
 
 export default App
