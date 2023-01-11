@@ -8,11 +8,19 @@ import './app.css'; //added line
 
 const App = () => {
     return (
-        <div className="container m-auto">
+        <div className="container m-auto px-[10px]">
             <Header />
             <Users />
-            <Form />
-            <ExpensesList />
+            
+            <div className="grid grid-cols-6">
+                <div className="col-span-2">
+                    <Form />
+                </div>
+                <div className="col-span-4">
+                    
+                    <ExpensesList  />
+                </div>
+            </div>
         </div>
     );
 }
