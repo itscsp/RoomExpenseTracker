@@ -65,23 +65,23 @@ const Users = () => {
       <div className='card-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
         {users.map((user, index) => (
 
-          <div key={index} className="userCards width-full font-semibold  col-span-1 bg-gray p-[10px] rounded-lg">
+          <div key={index} className="userCards width-full font-semibold  col-span-1 bg-gray p-[10px] rounded-[13px]">
 
             <div className='flex justify-start flex-wrap align-center mb-[10px] gap-[10px] text-[20px]'>
               <img className='rounded-full border-2 border-white' src={user.placeholderImage} alt={user.name} />
               <h4 className='self-center'>{user.name}</h4>
             </div>
-            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] p-[2px] mb-[10px]'>
-              <span className='w-[75px] text-center bg-gray py-[5px] px-[10px] rounded-[3px]'>Share</span>
-              <span className='py-[5px] px-[10px]'>₹{user.SharedAmount}</span>
+            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] py-[2px] px-[3px] mb-[10px]'>
+              <span className='w-[75px] text-center bg-gray py-[3px] px-[10px] rounded-[3px] font-normal'>Share</span>
+              <span className='py-[3px] px-[10px] font-normal'>₹{user.SharedAmount}</span>
             </div>
-            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] p-[2px] mb-[10px]'>
-              <span className='w-[75px] text-center bg-gray py-[5px] px-[10px] rounded-[3px]'>Paid</span>
-              <span className='py-[5px] px-[10px]'>₹{user.PaidAmount}</span>
+            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] py-[2px] px-[3px] mb-[10px]'>
+              <span className='w-[75px] text-center bg-gray py-[3px] px-[10px] rounded-[3px] font-normal'>Paid</span>
+              <span className='py-[3px] px-[10px] font-normal'>₹{user.PaidAmount}</span>
             </div>
-            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] p-[2px] mb-[10px]'>
-              <span className='w-[75px] text-center  py-[5px] px-[10px] rounded-[3px]'>To Pay</span>
-              <span className='py-[5px] px-[10px]'>₹{user.toPayAmount}</span>
+            <div className='bg-white flex justify-between flex-wrap align-center rounded-[3px] p-[2px]'>
+              <span className='w-[75px] text-center  py-[3px] px-[10px] rounded-[3px] font-normal'>To Pay</span>
+              <span className='py-[3px] px-[10px] font-normal'>₹{user.toPayAmount}</span>
             </div>
 
           </div>
