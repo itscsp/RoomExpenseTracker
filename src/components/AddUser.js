@@ -1,113 +1,69 @@
 import React, { useState } from 'react';
 
 const AddUser = () => {
-    const [formData, setFormData] = useState({
-        username: '',
-        email: '',
-        password: ''
-    });
-    const [formErrors, setFormErrors] = useState({
-        username: '',
-        email: '',
-        password: ''
-    });
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let formErrors = {};
 
-        // Validate form before submitting
-        let hasError = false;
-        if (!formData.username) {
-            setFormErrors({ ...formErrors, username: 'Username is required.' });
-            hasError = true;
-        }else{
-            if (formData.username.length < 3) {
-                setFormErrors({...formErrors, username: 'Username must be at least 3 characters long.'});
-                hasError = true;
-              }
-              if (formData.username.length > 30) {
-                setFormErrors({...formErrors, username: 'Username must be less than 30 characters long.'});
-                hasError = true;
-              }
-        }
-        if (!formData.email) {
-            setFormErrors({ ...formErrors, email: 'Email is required.' });
-            hasError = true;
-        }else{
-             // Regular expression to check email validation
-        if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(formData.email)) {
-            setFormErrors({ ...formErrors, email: 'Email is invalid' });
-            hasError = true;
+        if (!email) {
+            formErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            formErrors.email = 'Email address is invalid';
         }
 
+        if (!password) {
+            formErrors.password = 'Password is required';
+        } else if (password.length < 8) {
+            formErrors.password = 'Password must be at least 8 characters long';
+        } else {
+            formErrors.password = '';
         }
-        if (!formData.password) {
-            setFormErrors({ ...formErrors, password: 'Password is required.' });
-            hasError = true;
-        } else{
-            if (formData.password.length > 8 || formData.password.length < 12) {
-                setFormErrors({...formErrors, password: 'Password must be at least 8 characters long.'});
-                hasError = true;
-              }
+
+        if (Object.keys(formErrors).length > 0) {
+            setErrors(formErrors);
+            return;
         }
-       
-        // ... existing validation code ...
 
- 
-
- 
-
-        // check for errors and prevent form submission
-        if (hasError) return;
-        // form is valid, submit it
-        // make an api call to create user
-        // clear the form
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-        setFormErrors({ ...formErrors, [name]: '' });
-    };
+        // Form is valid, submit data to server
+    }
 
     return (
-        <form className='mt-[15px] grid grid-cols-4 gap-[53px]'>
-            <div>
+        <form className='mt-[15px] grid grid-cols-1 md:grid-cols-5 gap-4 align-start'>
 
-                <input
-                    type="text"
-                    placeholder="Enter your username"
-                    name="username"
-                    className='p-3 bg-white placeholder:text-black text-center  border rounded py-[10px]'
-                    value={formData.username}
-                    onChange={handleInputChange}
-                />
-                {formErrors.username && <p className="error text-[12px] text-red-600 ">{formErrors.username}</p>}
-            </div>
-            <div>
+            <div className='col-span-1 md:col-span-2'>
                 <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter user email"
                     name="email"
-                    className='p-3 bg-white placeholder:text-black text-center  border rounded py-[10px]'
-                    value={formData.email}
-                    onChange={handleInputChange}
+                    className='p-3 bg-white w-full placeholder:text-black md:text-center  border rounded py-[10px]'
+                    id="email" 
+                    value={email} 
+                    onChange={e => setEmail(e.target.value)}
                 />
-                {formErrors.email && <p className="error text-[12px] text-red-600 ">{formErrors.email}</p>}
+                {errors.email && <p className="text-[12px] text-red-600">{errors.email}</p>}
+                
             </div>
-            <div>
-
+            <div className='coll-span-1 md:col-span-2'>
                 <input
                     type="password"
-                    placeholder="Enter your password"
+                    placeholder="Enter user password"
                     name="password"
-                    className='p-3 bg-white placeholder:text-black text-center border rounded py-[10px]'
-                    value={formData.password}
-                    onChange={handleInputChange}
+                    className='p-3 bg-white w-full placeholder:text-black md:text-center border rounded py-[10px]'
+                    id="password" 
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)} 
                 />
-                {formErrors.password && <p className="error text-[12px] text-red-600 ">{formErrors.password}</p>}
-            </div>
-            <button onClick={handleSubmit} className='bg-black rounded-lg text-white cursor-pointer' type="submit">Add User</button>
+                {errors.password && <p className="text-[12px] text-red-600">{errors.password}</p>}
+                </div>
+                <div className='col-span-1'>
+                <button onClick={handleSubmit} className='w-full p-3 bg-black rounded-lg text-white cursor-pointer' type="submit">Add User</button>
+
+                </div>
         </form>
     )
 }
