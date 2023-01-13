@@ -12,11 +12,11 @@ const App = () => {
             <Header />
             <Users />
             
-            <div className="grid grid-cols-6">
-                <div className="col-span-2">
+            <div className="grid grid-cols-6 my-[60px] gap-[50px] ">
+                <div className="col-span-6 md:col-span-2 p-[20px] rounded-[20px] bg-gray">
                     <Form />
                 </div>
-                <div className="col-span-4">
+                <div className="col-span-6 md:col-span-4 rounded-[20px] bg-gray">
                     
                     <ExpensesList  />
                 </div>
