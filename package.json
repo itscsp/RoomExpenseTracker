@@ -1,6 +1,7 @@
 {
-  "name": "react-tailwind",
+  "name": "Room-Expense-Tracker",
   "version": "1.0.0",
+  "homepage":"https://room-expense-tracker-17ir-a2bz0p3ei-itscsp.vercel.app/",
   "description": "",
   "main": "index.js",
   "scripts": {
