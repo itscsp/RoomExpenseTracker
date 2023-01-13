@@ -1,6 +1,6 @@
 import React,{ useState, useRef, useEffect }  from 'react'
 
-import { IoIosArrowDown } from 'react-icons/Io'
+import { IoIosArrowDown } from 'react-icons/io'
 
 
 const Header = () => {
