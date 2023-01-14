@@ -98,7 +98,7 @@ const ExpenseForm = () => {
                     placeholder='Amount'
 
                 />
-                {errors.amount && <p className='px-[5px] Atext-[12px] text-red-600'>{errors.amount}</p>}
+                {errors.amount && <p className='px-[5px] text-[12px] text-red-600'>{errors.amount}</p>}
             </div>
             <button className='bg-black text-white py-[6px] px-[20px] text-[18px] rounded-[5px] leading-[40px]' type="submit">Add Expense</button>
         </form>
