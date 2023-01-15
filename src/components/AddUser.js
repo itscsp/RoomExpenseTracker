@@ -42,7 +42,7 @@ const AddUser = () => {
 
     return (
         <form className='mt-[15px] grid grid-cols-1 md:grid-cols-4 gap-4 align-start'>
-            <div className='coll-span-1 '>
+            <div className='col-span-1 '>
                 <input
                     type="text"
                     placeholder="Enter user name"
