@@ -15,10 +15,6 @@ function LoginScreen(props) {
             formErrors.email = 'Email is required';
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             formErrors.email = 'Email address is invalid';
-         
-
-        }else{
-   
         }
 
         if (!password) {
@@ -26,26 +22,18 @@ function LoginScreen(props) {
           
         } else if (password.length < 8) {
             formErrors.password = 'Password must be at least 8 characters long';
-            
-        } else {
-            formErrors.password = '';
-            
-        }
+        } 
 
-        if(!errors.email && !errors.password) {
-            props.onLogin(email, password);
-        }
-        
+        console.log(Object.keys(formErrors).length )
         if (Object.keys(formErrors).length > 0) {
             setErrors(formErrors);
             return;
-        } 
+        } else{
+            props.onLogin(email, password);
+        }
         
  
         
-
-
-
 
     }
 
