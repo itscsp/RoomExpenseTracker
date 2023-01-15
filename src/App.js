@@ -7,6 +7,7 @@ import Login from './components/Login'
 
 
 import './app.css'; //added line
+import Footer from "./components/Footer";
 
 const App = () => {
     const [isLoged, setIsLoged] = useState(false);
@@ -37,6 +38,7 @@ const App = () => {
                         <ExpensesList  />
                     </div>
                 </div>
+                    <Footer />
             </div>
 
              }

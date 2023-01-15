@@ -63,7 +63,7 @@ const ExpenseForm = () => {
 
                 <input
                     type="date"
-                    name="date"
+                    name="date"                                     
                     placeholder='Date'
                     value={expense.date}
                     onChange={handleChange}

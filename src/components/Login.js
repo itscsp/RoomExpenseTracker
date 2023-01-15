@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from './Footer';
 
 function LoginScreen(props) {
     const [email, setEmail] = useState('');
@@ -88,6 +89,7 @@ function LoginScreen(props) {
                         Login
                     </button>
                 </form>
+                <Footer/>
             </div>
 
 
