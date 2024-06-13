@@ -46,6 +46,7 @@ function LoginScreen(props) {
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-[10px]">
                     <h1 className='text-center font-semibold text-[24px] md:text-[42px]   text-black'>Expenses Tracker</h1>
+                    <p> <small>Username: test@gmail.com</small></br><small>Pass: 123456789</small> </p>
                     <h3 className='text-center font-semibold   md:text-[18px]  text-black'>Login</h3>
                     <div>
 
@@ -77,6 +78,7 @@ function LoginScreen(props) {
                         Login
                     </button>
                 </form>
+    
                 <Footer/>
             </div>
 
